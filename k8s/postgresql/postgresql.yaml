@@ -27,7 +27,7 @@ spec:
               cpu: "250m"
           env:
           - name: POSTGRES_USER
-            value: admin
+            value: admintremligeiro
           - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:

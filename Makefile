@@ -26,6 +26,9 @@ run-compose:
 run-compose-enviroment:
 	docker compose -f docker-compose-enviroment.yaml up
 
+docker-push:
+	docker push tbtec/tremligeiro:1.0.0
+
 kube-config:
 #	eval $(minikube docker-env)
 	kubectl apply -f k8s/namespace.yaml
@@ -37,5 +40,8 @@ kube-deploy:
 	kubectl apply -f k8s/secret.yaml
 	kubectl apply -f k8s/deployment.yaml
 	kubectl apply -f k8s/service.yaml
+	kubectl apply -f k8s/ingress.yaml
 	kubectl apply -f k8s/hpa.yaml
 
+kube-eks-connect:
+	aws eks update-kubeconfig --name tremligeiro-eks-cluster --region us-east-1

@@ -24,7 +24,7 @@ spec:
       containers:
         - name: tremligeiro
           image: tbtec/tremligeiro:1.0.0
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080
