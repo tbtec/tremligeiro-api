@@ -8,7 +8,7 @@ data:
   PORT: "8080"
   POSTGRES_DB: "tremligeiro_db"
   POSTGRES_PORT: "5432"
-  POSTGRES_USER: "admin"
+  POSTGRES_USER: "admintremligeiro"
   POSTGRES_HOST: "postgres.tremligeiro.svc.cluster.local"
   PAYMENT_URL: "https://api.mercadopago.com/instore/orders/qr/seller/collectors/202978706/pos/SUC001POS001/qrs"
   

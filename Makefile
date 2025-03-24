@@ -1,4 +1,5 @@
 BINARY_NAME=tremligeiro
+AWS_EKS_CLUSTER_NAME=tremligeiro-eks-cluster
 
 run:
 	go run cmd/main.go
@@ -12,6 +13,9 @@ pre-build:
 	go mod tidy
 
 build:
+	go build -o bin/${BINARY_NAME} -ldflags="-s -w" -tags appsec cmd/main.go
+
+build-ci:
 	go build -o bin/${BINARY_NAME} -ldflags="-s -w" -tags appsec cmd/main.go
 
 build-docker:
@@ -43,5 +47,15 @@ kube-deploy:
 	kubectl apply -f k8s/ingress.yaml
 	kubectl apply -f k8s/hpa.yaml
 
+kube-deploy-eks:
+	kubectl apply -f k8s/namespace.yaml
+	kubectl apply -f k8s/configmap.yaml
+	kubectl apply -f k8s/secret.yaml
+	kubectl apply -f k8s/deployment.yaml
+	kubectl apply -f k8s/service.yaml
+	kubectl apply -f k8s/ingress.yaml
+	kubectl apply -f k8s/hpa.yaml
+
+
 kube-eks-connect:
-	aws eks update-kubeconfig --name tremligeiro-eks-cluster --region us-east-1
+	aws eks update-kubeconfig --name ${AWS_EKS_CLUSTER_NAME} --region us-east-1
