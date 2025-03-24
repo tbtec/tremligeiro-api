@@ -1,4 +1,4 @@
-name: DestroyLambda
+name: DestroyApplication
 
 on:
   workflow_dispatch:
