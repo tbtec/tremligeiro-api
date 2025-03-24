@@ -1,0 +1,15 @@
+services:
+    postgres:
+        container_name: 'postgres_tremligeiro_ca'
+        image: postgres:17.0
+        ports:
+            - 5432:$POSTGRES_PORT
+        environment:
+            - POSTGRES_DB=$POSTGRES_DB
+            - POSTGRES_USER=$POSTGRES_USER
+            - POSTGRES_PASSWORD=$POSTGRES_PASS
+        volumes:
+            - pg_data:/var/lib/postgresql/data
+        # restart: always
+volumes:
+    pg_data:
