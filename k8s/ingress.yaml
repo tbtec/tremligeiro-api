@@ -12,7 +12,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /tremligeiro
+          - path: /
             pathType: Prefix
             backend:
               service:

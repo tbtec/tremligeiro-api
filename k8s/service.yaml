@@ -3,11 +3,14 @@ kind: Service
 metadata:
   name: tremligeiro
   namespace: tremligeiro
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
   labels:
     app: tremligeiro
     environment: "dev"
 spec:
-  type: LoadBalancer
+  # type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: http
       port: 8080
