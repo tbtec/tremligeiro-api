@@ -8,10 +8,11 @@ This applications is responsible for the restaurant "Trem Ligeiro" from Company 
 
 -   [Go 1.22](https://golang.org/doc/install)
 -   [Make](https://www.gnu.org/software/make/)
--   [Docker](https://docs.docker.com/engine/install/)
--   [Docker Compose](https://docs.docker.com/compose/install/https://docs.docker.com/compose/install/)
+-   [Docker](https://docs.docker.com/engine/install/) [local]
+-   [Docker Compose](https://docs.docker.com/compose/install/https://docs.docker.com/compose/install/) [local]
 -   [Minikube](https://minikube.sigs.k8s.io/docs/) [local]
 -   [Kubectl](https://kubernetes.io/docs/tasks/tools/) [local]
+-   [AWS CLI](https://aws.amazon.com/pt/cli/) [cloud]
 
 ### Building the Application
 
@@ -36,6 +37,7 @@ make run
 ```
 
 ## Deploy at AWS EKS Cluster
+### Local
 
 Pre-requisite: Needed AWS Credentials on local context.
 
@@ -51,14 +53,5 @@ To destroy, use this command:
 ```bash
 make kube-kube-deploy-eks-destroy
 ```
-
-### Guides
-More Guides is available at [Guides](/docs/guides/).
-
-## Clean Architecture at Application
-
-![Trem Ligeiro Clean Architecture](/docs/diagrams/trem-ligeiro-ca-CleanArch.jpg)
-
-## Infrastructure
-
-![Trem Ligeiro Infraestructure](/docs/diagrams/trem-ligeiro-ca-ArchTremLigeiro.jpg)
+### Cloud
+Configure GitHub Actions enviroment variables, then, starts DeployApplication workflow.
