@@ -9,6 +9,6 @@ data:
   POSTGRES_DB: "tremligeiro_db"
   POSTGRES_PORT: "5432"
   POSTGRES_USER: "admintremligeiro"
-  POSTGRES_HOST: "postgres.tremligeiro.svc.cluster.local"
+  POSTGRES_HOST: "tremligeiro-postgres-db.crbfewzyelcr.us-east-1.rds.amazonaws.com"
   PAYMENT_URL: "https://api.mercadopago.com/instore/orders/qr/seller/collectors/202978706/pos/SUC001POS001/qrs"
   
